@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+<!-- templates/accounts/admin_dashboard.html -->
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<div class="w-screen">
+    <div class="m-10">
+        <p class="text-xl font-bold text-center pb-5">ADMIN DASHBOARD</p>
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">User Management</h5>
+                        <p class="card-text">Total Users: {{ total_users }}</p>
+                        <a href="#" class="btn bg-blue-700 hover:border-white hover:bg-blue-700">Manage Users</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more admin-specific cards -->
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="card bg-gray-700 shadow-xl text-white">
+                <div class="card-body">
+                    <h5 class="card-title">User Management</h5>
+                    <p class="card-text">Total Users: {{ total_users }}</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn bg-blue-700 hover:border-white hover:bg-blue-700">View Requests</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-gray-700 shadow-xl text-white">
+                <div class="card-body">
+                    <h5 class="card-title">User Management</h5>
+                    <p class="card-text">Total Users: {{ total_users }}</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn bg-blue-700 hover:border-white hover:bg-blue-700">View Requests</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-gray-700 shadow-xl text-white">
+                <div class="card-body">
+                    <h5 class="card-title">User Management</h5>
+                    <p class="card-text">Total Users: {{ total_users }}</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn bg-blue-700 hover:border-white hover:bg-blue-700">View Requests</button>
+                    </div>
+                </div>
+            </div>
+        <!-- Add more cards for other doctor features -->
+        </div>
+    </div>
+</div>
+{% endblock %}

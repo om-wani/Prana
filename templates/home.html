@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+<!-- templates/accounts/home.html -->
+{% comment %} 
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h1 class="display-4 mb-4 text-5xl">Welcome to Prana</h1>
+    <p class="lead">A platform connecting organ donors with those in need</p>
+    <div class="mt-4">
+        <a href="{% url 'accounts:signup' %}" class="py-3 px-7 me-2 mb-2 text-base font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-blue-700">Sign Up</a>
+        <a href="{% url 'accounts:login' %}" class="py-3 px-7 me-2 mb-2 text-base font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-blue-700">Log In</a>
+    </div>
+</div>
+{% endblock %} {% endcomment %}
+
+{% block title %}Prana - Connect Life{% endblock %}
+
+{% block content %}
+<div class="min-h-screen w-screen bg-blue-950">
+    <!-- Hero Section -->
+    <div class="text-center py-64 px-4">
+        <h1 class="text-5xl font-bold text-gray-100 mb-4">Welcome to Prana</h1>
+        <p class="text-xl text-gray-100 max-w-2xl mx-auto mb-8">Connecting organ donors with recipients, bringing hope and saving lives through the gift of organ donation.</p>
+        <div class="space-x-4">
+            <a href="{% url 'accounts:signup' %}" class="bg-green-700 hover:bg-blue-700 hover:border text-white font-bold py-3 px-20 mx-2 rounded-xl">REGISTER</a>
+            {% comment %} <a href="{% url 'accounts:signup' %}" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300">Sign In</a> {% endcomment %}
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="bg-white py-12">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+                <p class="text-4xl font-bold text-blue-600">100K+</p>
+                <p class="text-gray-600 mt-2">Registered Donors</p>
+            </div>
+            <div class="text-center">
+                <p class="text-4xl font-bold text-blue-600">50K+</p>
+                <p class="text-gray-600 mt-2">Lives Saved</p>
+            </div>
+            <div class="text-center">
+                <p class="text-4xl font-bold text-blue-600">24/7</p>
+                <p class="text-gray-600 mt-2">Support Available</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-gray-100 mb-12">Why Choose Prana?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-900">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-blue-600 mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Secure Platform</h3>
+                    <p class="text-gray-600">Your medical information is protected with the highest security standards</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-blue-600 mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Quick Matching</h3>
+                    <p class="text-gray-600">Advanced algorithms to find the most compatible donor-recipient matches</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-blue-600 mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Expert Support</h3>
+                    <p class="text-gray-600">Medical professionals available 24/7 to assist and guide you</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-blue-600 text-white py-16">
+        <div class="max-w-4xl mx-auto text-center px-4">
+            <h2 class="text-3xl font-bold mb-4">Ready to Make a Difference?</h2>
+            <p class="text-lg mb-8">Join our community today and be part of something meaningful.</p>
+            <div class="space-x-4">
+                <a href="{% url 'accounts:signup' %}" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Get Started</a>
+                <a href="#" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

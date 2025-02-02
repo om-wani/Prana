@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="modal modal-open">
+    <div class="modal-box">
+        <h3 class="font-bold text-lg">Success!</h3>
+        <p class="py-4">Account Creation Successful. Click next to proceed to dashboard</p>
+        <div class="modal-action">
+            <a href="{% url 'accounts:login' %}" class="btn btn-primary">Next</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

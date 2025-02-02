@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+<!-- templates/prana/signup.html -->
+
+
+{% block title %}Sign Up - Prana{% endblock %}
+
+{% block content %}
+<div class="w-screen">
+    <div class="max-w-md m-auto min-h-screen py-20">
+        <h2 class="text-2xl font-bold mb-6">Create Account</h2>
+        <form method="post" class="space-y-4">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn bg-blue-700 w-full text-white hover:border-white">Sign Up</button>
+        </form>
+        <p class="mt-4 text-center">
+            Already have an account? <a href="{% url 'accounts:login' %}" class="link text-blue-700">Login</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

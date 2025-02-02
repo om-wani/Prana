@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="mb-4">Dashboard</h2>
+<div class="row">
+    <div class="col-md-3">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Total Donations</h5>
+                <p class="card-text display-4">123</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Active Requests</h5>
+                <p class="card-text display-4">45</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Successful Matches</h5>
+                <p class="card-text display-4">78</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Active Users</h5>
+                <p class="card-text display-4">256</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Recent Activity</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">New donation request received</li>
+                    <li class="list-group-item">Organ match found for recipient #1234</li>
+                    <li class="list-group-item">New user registration: John Doe</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Quick Actions</h5>
+                <div class="d-grid gap-2">
+                    <a href="{% url 'register_donor' %}" class="btn btn-primary">Register as Donor</a>
+                    <a href="{% url 'request_organ' %}" class="btn btn-secondary">Request an Organ</a>
+                    <a href="{% url 'update_profile' %}" class="btn btn-info">Update Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
