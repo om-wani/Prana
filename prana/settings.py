@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 import os
+import dj_database_url
 from pathlib import Path
 from string import Template
 from django.contrib import messages
@@ -78,11 +79,23 @@ WSGI_APPLICATION = 'prana.wsgi.app'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
+    'default': dj_database_url.config(
+        default=os.getenv('DATABASE_POSTGRES_URL'),
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
 }
+
+# Update database config from environment variable
+if 'DATABASE_URL' in os.environ:
+    DATABASES['default'] = dj_database_url.config(
+        conn_max_age = 60,
+        conn_health_checks = True,
+    )
 
 
 # Password validation
@@ -144,3 +157,9 @@ MESSAGE_TAGS = {
     messages.WARNING: 'alert-warning',
     messages.ERROR: 'alert-error'
 }
+
+# Security settings
+CSRF_TRUSTED_ORIGINS = ['https://*.vercel.app']
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
