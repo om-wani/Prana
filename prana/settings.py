@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 import os
+from urllib.parse import urlparse
 import dj_database_url
 from pathlib import Path
 from string import Template
@@ -78,15 +79,23 @@ WSGI_APPLICATION = 'prana.wsgi.app'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# Get database URL from environment
+db_url = os.getenv('DATABASE_POSTGRES_URL', '')
+
+# Clean and parse the URL
+parsed = urlparse(db_url)
+if parsed.scheme == 'postgres':
+    db_url = db_url.replace('postgres:', 'postgresql:')
+
 DATABASES = {
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
     'default': dj_database_url.config(
-        default=os.getenv('DATABASE_POSTGRES_URL'),
+        default=db_url,
         conn_max_age=600,
-        conn_health_checks=True,
+        ssl_require=True,
     )
 }
 
