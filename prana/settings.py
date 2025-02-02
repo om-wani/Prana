@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-ibaa&7ts!z+wy@b6piqr)y5dowxtl%*eh97h3(9kvn747sfk!d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app', 'localhost']
+ALLOWED_HOSTS = ['*', '.vercel.app', 'localhost']
 
 
 # Application definition
@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'prana.wsgi.application'
+WSGI_APPLICATION = 'prana.wsgi.app'
 
 
 # Database
@@ -120,6 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
